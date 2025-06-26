@@ -1,0 +1,21 @@
+import { ProductModule } from './modules/product';
+import { CustomerModule } from './modules/customer';
+import { SalesModule } from './modules/sales';
+import { PurchaseModule } from './modules/purchase';
+import { ReferenceModule } from './modules/reference';
+export declare class Cin7CoreSDK {
+    product: ProductModule;
+    customer: CustomerModule;
+    sales: SalesModule;
+    purchase: PurchaseModule;
+    reference: ReferenceModule;
+    constructor(accountId: string, applicationKey: string);
+}
+export { ProductModule } from './modules/product';
+export { CustomerModule } from './modules/customer';
+export { SalesModule } from './modules/sales';
+export { PurchaseModule } from './modules/purchase';
+export { ReferenceModule } from './modules/reference';
+export { BaseCin7SDK } from './core/base-sdk';
+export type { HTTPMethod, RequestOptions } from './core/types';
+//# sourceMappingURL=index.d.ts.map

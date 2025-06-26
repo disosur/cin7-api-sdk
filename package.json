@@ -1,0 +1,39 @@
+{
+  "name": "cin7-core-api-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for Cin7 Core API v2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cin7",
+    "core",
+    "api",
+    "sdk",
+    "inventory",
+    "ecommerce",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

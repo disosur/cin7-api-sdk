@@ -1,0 +1,11 @@
+{
+  "name": "cin7-sdk-example",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx index.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1"
+  }
+}
