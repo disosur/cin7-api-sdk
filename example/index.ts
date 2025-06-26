@@ -1,21 +1,17 @@
 import { Cin7CoreSDK } from "../src/index";
+import "dotenv/config";
 
 async function example() {
-  const accountId = process.env.CIN7_ACCOUNT_ID || "your-account-id";
-  const applicationKey =
-    process.env.CIN7_APPLICATION_KEY || "your-application-key";
+  const accountId = process.env.CIN7_ACCOUNT_ID || "acc id";
+  const applicationKey = process.env.CIN7_APPLICATION_KEY || "app id";
 
   const cin7 = new Cin7CoreSDK(accountId, applicationKey);
 
   try {
-    console.log("=� Cin7 Core SDK Example\n");
-
-    // Get all products
-    console.log("=� Fetching products...");
-    const products = await cin7.product.queries.getProducts<any>({ limit: 5 });
-    console.log(`Found ${products.length || 0} products`);
-
-    console.log("\n Example completed successfully!");
+    const products = await cin7.customer.queries.getCustomers<any>({
+      limit: 5,
+    });
+    console.log(products);
   } catch (error) {
     console.error("L Error:", error instanceof Error ? error.message : error);
   }
