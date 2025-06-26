@@ -1,6 +1,6 @@
 {
   "name": "cin7-core-api-sdk",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "TypeScript SDK for Cin7 Core API v2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

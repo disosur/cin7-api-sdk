@@ -1,6 +1,6 @@
 # Cin7 Core API SDK
 
-A TypeScript SDK for the Cin7 Core API v2, providing a modern, modular interface for inventory management operations.
+An Unofficial TypeScript SDK for the Cin7 Core API v2, providing a modern, modular interface for inventory management operations.
 
 ## Features
 
@@ -19,17 +19,17 @@ npm install cin7-core-api-sdk
 ## Quick Start
 
 ```typescript
-import { Cin7CoreSDK } from 'cin7-core-api-sdk';
+import { Cin7CoreSDK } from "cin7-core-api-sdk";
 
-const cin7 = new Cin7CoreSDK('your-account-id', 'your-application-key');
+const cin7 = new Cin7CoreSDK("your-account-id", "your-application-key");
 
 // Get products
 const products = await cin7.product.queries.getProducts<any>({ limit: 10 });
 
 // Create a product
 const newProduct = await cin7.product.mutations.createProduct({
-  Name: 'Example Product',
-  SKU: 'EXP-001'
+  Name: "Example Product",
+  SKU: "EXP-001",
 });
 ```
 
@@ -53,6 +53,7 @@ const cin7 = new Cin7CoreSDK(accountId, applicationKey);
 ### Product Module
 
 #### Queries (GET operations)
+
 ```typescript
 // Get all products with optional filters
 const products = await cin7.product.queries.getProducts<any>({
@@ -68,12 +69,16 @@ const product = await cin7.product.queries.getProduct<any>(productId);
 ```
 
 #### Mutations (POST/PUT/DELETE operations)
+
 ```typescript
 // Create a new product
 const newProduct = await cin7.product.mutations.createProduct(productData);
 
 // Update existing product
-const updatedProduct = await cin7.product.mutations.updateProduct(id, productData);
+const updatedProduct = await cin7.product.mutations.updateProduct(
+  id,
+  productData
+);
 
 // Delete product
 await cin7.product.mutations.deleteProduct(id);
@@ -82,6 +87,7 @@ await cin7.product.mutations.deleteProduct(id);
 ### Customer Module
 
 #### Queries
+
 ```typescript
 // Get all customers
 const customers = await cin7.customer.queries.getCustomers<any>({
@@ -95,12 +101,16 @@ const customer = await cin7.customer.queries.getCustomer<any>(customerId);
 ```
 
 #### Mutations
+
 ```typescript
 // Create customer
 const newCustomer = await cin7.customer.mutations.createCustomer(customerData);
 
 // Update customer
-const updatedCustomer = await cin7.customer.mutations.updateCustomer(id, customerData);
+const updatedCustomer = await cin7.customer.mutations.updateCustomer(
+  id,
+  customerData
+);
 
 // Delete customer
 await cin7.customer.mutations.deleteCustomer(id);
@@ -109,6 +119,7 @@ await cin7.customer.mutations.deleteCustomer(id);
 ### Sales Module
 
 #### Queries
+
 ```typescript
 // Get sales
 const sales = await cin7.sales.queries.getSales<any>({
@@ -122,6 +133,7 @@ const sale = await cin7.sales.queries.getSale<any>(saleId);
 ```
 
 #### Mutations
+
 ```typescript
 // Create sale
 const newSale = await cin7.sales.mutations.createSale(saleData);
@@ -136,6 +148,7 @@ await cin7.sales.mutations.deleteSale(id);
 ### Purchase Module
 
 #### Queries
+
 ```typescript
 // Get purchases
 const purchases = await cin7.purchase.queries.getPurchases<any>({
@@ -149,12 +162,16 @@ const purchase = await cin7.purchase.queries.getPurchase<any>(purchaseId);
 ```
 
 #### Mutations
+
 ```typescript
 // Create purchase
 const newPurchase = await cin7.purchase.mutations.createPurchase(purchaseData);
 
 // Update purchase
-const updatedPurchase = await cin7.purchase.mutations.updatePurchase(id, purchaseData);
+const updatedPurchase = await cin7.purchase.mutations.updatePurchase(
+  id,
+  purchaseData
+);
 
 // Delete purchase
 await cin7.purchase.mutations.deletePurchase(id);
@@ -163,6 +180,7 @@ await cin7.purchase.mutations.deletePurchase(id);
 ### Reference Module
 
 #### Queries (Read-only reference data)
+
 ```typescript
 // Get locations
 const locations = await cin7.reference.queries.getLocations<any>();
@@ -187,6 +205,7 @@ export CIN7_APPLICATION_KEY="your-application-key"
 ```
 
 Or create a `.env` file:
+
 ```
 CIN7_ACCOUNT_ID=your-account-id
 CIN7_APPLICATION_KEY=your-application-key
@@ -212,7 +231,7 @@ All API calls return promises and will throw errors for HTTP failures:
 try {
   const products = await cin7.product.queries.getProducts<any>();
 } catch (error) {
-  console.error('API Error:', error.message);
+  console.error("API Error:", error.message);
 }
 ```
 
@@ -235,7 +254,7 @@ const products = await cin7.product.queries.getProducts<Product[]>();
 Import only the modules you need:
 
 ```typescript
-import { ProductModule } from 'cin7-core-api-sdk';
+import { ProductModule } from "cin7-core-api-sdk";
 
 const productModule = new ProductModule(accountId, applicationKey);
 const products = await productModule.queries.getProducts<any>();
