@@ -8,10 +8,10 @@ async function example() {
   const cin7 = new Cin7CoreSDK(accountId, applicationKey);
 
   try {
-    const products = await cin7.customer.queries.getCustomers<any>({
-      limit: 5,
+    const stock = await cin7.stock.queries.list<any>({
+      limit: 10, // Example: get the first 10 stock items
     });
-    console.log(products);
+    console.log('Stock list:', stock);
   } catch (error) {
     console.error("L Error:", error instanceof Error ? error.message : error);
   }

@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "module-build": "node scripts/create-module.js"
   },
   "keywords": [
     "cin7",

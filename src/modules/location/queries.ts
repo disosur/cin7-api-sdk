@@ -1,8 +1,8 @@
 import { BaseCin7SDK } from '../../core/base-sdk';
 
-    export class PurchaseQueries extends BaseCin7SDK {
+    export class LocationQueries extends BaseCin7SDK {
       async get<T>(id: string): Promise<T> {
-        return this.get<T>(`purchase/${id}`);
+        return this.get<T>(`location/${id}`);
       }
 
       async list<T>(options?: {
@@ -10,6 +10,6 @@ import { BaseCin7SDK } from '../../core/base-sdk';
         limit?: number;
         page?: number;
       }): Promise<T> {
-        return this.get<T>('purchase', options);
+        return this.get<T>('location', options);
       }
     }
