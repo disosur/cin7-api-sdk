@@ -1,15 +1,16 @@
-import { BaseCin7SDK } from '../../core/base-sdk';
+import { BaseCin7SDK } from "../../core/base-sdk";
 
-    export class InventoryWriteoffQueries extends BaseCin7SDK {
-      async get<T>(id: string): Promise<T> {
-        return this.get<T>(`inventorywriteoff/${id}`);
-      }
+export class InventoryWriteoffQueries extends BaseCin7SDK {
+  async getInventoryWriteoffList<T>(options?: {
+    Search?: string;
+    Limit?: number;
+    Page?: number;
+    Status?: string;
+  }): Promise<T> {
+    return this.get<T>("inventorywriteoffList", options);
+  }
 
-      async list<T>(options?: {
-        search?: string;
-        limit?: number;
-        page?: number;
-      }): Promise<T> {
-        return this.get<T>('inventorywriteoff', options);
-      }
-    }
+  async getInventoryWriteoff<T>(options?: { TaskID: string }): Promise<T> {
+    return this.get<T>("inventorywriteoff", options);
+  }
+}

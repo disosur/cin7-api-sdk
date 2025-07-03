@@ -1,15 +1,12 @@
-import { BaseCin7SDK } from '../../core/base-sdk';
+import { BaseCin7SDK } from "../../core/base-sdk";
 
-    export class FixedAssetTypeQueries extends BaseCin7SDK {
-      async get<T>(id: string): Promise<T> {
-        return this.get<T>(`fixedassettype/${id}`);
-      }
-
-      async list<T>(options?: {
-        search?: string;
-        limit?: number;
-        page?: number;
-      }): Promise<T> {
-        return this.get<T>('fixedassettype', options);
-      }
-    }
+export class FixedAssetTypeQueries extends BaseCin7SDK {
+  async getFixedAssetType<T>(options?: {
+    FixedAssetType?: string;
+    Name?: string;
+    Limit?: number;
+    Page?: number;
+  }): Promise<T> {
+    return this.get<T>("ref/fixedassettype", options);
+  }
+}
