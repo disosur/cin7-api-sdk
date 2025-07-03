@@ -1,15 +1,12 @@
 import { BaseCin7SDK } from "../../core/base-sdk";
 
 export class AttributeSetQueries extends BaseCin7SDK {
-  async get<T>(id: string): Promise<T> {
-    return this.get<T>(`attributeset/${id}`);
-  }
-
   async list<T>(options?: {
-    search?: string;
-    limit?: number;
-    page?: number;
+    Limit?: number;
+    Page?: number;
+    ID?: string;
+    Name?: string;
   }): Promise<T> {
-    return this.get<T>("attributeset", options);
+    return this.get<T>("ref/attributeset", options);
   }
 }

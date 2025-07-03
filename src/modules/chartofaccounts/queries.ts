@@ -1,15 +1,14 @@
-import { BaseCin7SDK } from '../../core/base-sdk';
+import { BaseCin7SDK } from "../../core/base-sdk";
 
-    export class ChartofaccountsQueries extends BaseCin7SDK {
-      async get<T>(id: string): Promise<T> {
-        return this.get<T>(`chartofaccounts/${id}`);
-      }
-
-      async list<T>(options?: {
-        search?: string;
-        limit?: number;
-        page?: number;
-      }): Promise<T> {
-        return this.get<T>('chartofaccounts', options);
-      }
-    }
+export class ChartofaccountsQueries extends BaseCin7SDK {
+  async list<T>(options?: {
+    Code?: string;
+    Name?: string;
+    Type?: string;
+    Status?: string;
+    Limit?: number;
+    Page?: number;
+  }): Promise<T> {
+    return this.get<T>("chartofaccounts", options);
+  }
+}
